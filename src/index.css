@@ -120,3 +120,34 @@
     flex-direction: column;
   }
 }
+
+/* RUL Prediction Table Style */
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  th, td {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.table-responsive th, .table-responsive td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-responsive th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
