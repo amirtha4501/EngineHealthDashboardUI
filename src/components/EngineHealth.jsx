@@ -35,7 +35,7 @@ export default function EngineHealth() {
 
       {/* Sensor Data Trends */}
       <div className="charts-container">
-        <div className="card" style={{ flex: 1 }}>
+        <div className="card mt-2 mb-2" style={{ flex: 1 }}>
           <h3>Sensor Data Trends</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={mockSensorData}>

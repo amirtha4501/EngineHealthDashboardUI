@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import EngineHealth from "./components/EngineHealth";
 import Navbar from "./components/Navbar";
 import RULPrediction from "./components/RULPrediction";
+import FaultClassification from "./components/FaultClassification";
 
 function App() {
   const [page, setPage] = useState("dashboard");
@@ -17,6 +18,8 @@ function App() {
         return <EngineHealth />;
       case "rul-prediction":
         return <RULPrediction />;
+      case "faults":
+        return <FaultClassification />;
       default:
         return <h2>Select a Page</h2>;
     }
