@@ -1,21 +1,35 @@
-import React, { useState } from "react";
-import Dashboard from "./components/Dashboard";
-import Navbar from "./components/Navbar";
+import { useState } from "react";
 import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import EngineHealth from "./components/EngineHealth";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState("dashboard");
+  const [page, setPage] = useState("dashboard");
+
+  // Function to render selected page
+  const renderPage = () => {
+    switch (page) {
+      case "dashboard":
+        return <Dashboard />;
+      case "engine-health":
+        return <EngineHealth />;
+      default:
+        return <h2>Select a Page</h2>;
+    }
+  };
 
   return (
     <div className="app-container">
+      {/* Full-width navbar at the top */}
       <Navbar />
+
       <div className="main-layout">
-        <div className="content-area">
-          <Sidebar onSelectPage={setSelectedPage} />
-          <div className="content-area">
-            {selectedPage === "dashboard" && <Dashboard />}
-          </div>
-        </div>
+        {/* Fixed Sidebar on the left */}
+        <Sidebar onSelectPage={setPage} />
+
+        {/* Main Content on the right */}
+        <main className="content-area">{renderPage()}</main>
       </div>
     </div>
   );

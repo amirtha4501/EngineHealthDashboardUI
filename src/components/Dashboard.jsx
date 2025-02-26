@@ -1,4 +1,7 @@
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar } from "recharts";
+import { 
+  LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, 
+  PieChart, Pie, Cell, BarChart, Bar 
+} from "recharts";
 import "../index.css"; // Import global styles
 
 const mockData = {
@@ -22,26 +25,26 @@ const COLORS = ["#4CAF50", "#FFC107", "#F44336"];
 
 export default function Dashboard() {
   return (
-    <div style={{ padding: "20px" }}>
-      <div className="dashboard-container">
-        <h3>Welcome to the Engine Health Dashboard</h3>
-        <p>Monitor aircraft engine performance, detect faults, and estimate Remaining Useful Life (RUL).</p>
-      </div>
+    <div className="dashboard-container">
+      <h3>Welcome to the Engine Health Dashboard</h3>
+      <p>Monitor aircraft engine performance, detect faults, and estimate Remaining Useful Life (RUL).</p>
+
       {/* KPI Cards */}
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div className="card-container">
         <div className="card">
           <h3>Avg. Remaining Useful Life</h3>
           <p className="highlight">{mockData.avgRUL} cycles</p>
         </div>
         <div className="card">
           <h3>Total Faults</h3>
-          <p className="highlight red">{mockData.faults.Normal + mockData.faults.Warning + mockData.faults.Critical}</p>
+          <p className="highlight red">
+            {mockData.faults.Normal + mockData.faults.Warning + mockData.faults.Critical}
+          </p>
         </div>
         <div className="card">
           <h3>Maintenance Alerts</h3>
           <p className="highlight orange">{mockData.maintenanceSchedule.length}</p>
         </div>
-        {/* New Engines Monitored Card */}
         <div className="card">
           <h3>Engines Monitored</h3>
           <p className="highlight green">{mockData.maintenanceSchedule.length}</p>
@@ -49,9 +52,9 @@ export default function Dashboard() {
       </div>
 
       {/* Charts */}
-      <div className="charts-container">
+      <div className="charts-grid">
         {/* RUL Trend Chart */}
-        <div className="card" style={{ flex: 1 }}>
+        <div className="chart-card">
           <h3>Average RUL Trend</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={mockData.rulTrend}>
@@ -65,7 +68,7 @@ export default function Dashboard() {
         </div>
 
         {/* Fault Classification Pie Chart */}
-        <div className="card" style={{ flex: 1 }}>
+        <div className="chart-card">
           <h3>Fault Classification</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -93,7 +96,7 @@ export default function Dashboard() {
       </div>
 
       {/* Maintenance Bar Chart */}
-      <div className="card" style={{ marginTop: "20px" }}>
+      <div className="chart-card">
         <h3>Maintenance Count per Engine</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={mockData.maintenanceSchedule}>
