@@ -5,6 +5,7 @@ import EngineHealth from "./components/EngineHealth";
 import Navbar from "./components/Navbar";
 import RULPrediction from "./components/RULPrediction";
 import FaultClassification from "./components/FaultClassification";
+import FeatureImportance from "./components/FeatureImportance";
 
 function App() {
   const [page, setPage] = useState("dashboard");
@@ -20,6 +21,8 @@ function App() {
         return <RULPrediction />;
       case "faults":
         return <FaultClassification />;
+      case "feature-importance":
+        return <FeatureImportance />;
       default:
         return <h2>Select a Page</h2>;
     }

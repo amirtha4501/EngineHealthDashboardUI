@@ -94,7 +94,7 @@ button {
 .sidebar li {
   padding: 15px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
   transition: background 0.3s ease;
 }
 
