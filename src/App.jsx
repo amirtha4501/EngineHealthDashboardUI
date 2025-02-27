@@ -32,7 +32,7 @@ function App() {
 
       <div className="main-layout">
         {/* Fixed Sidebar on the left */}
-        <Sidebar onSelectPage={setPage} />
+        <Sidebar onSelectPage={setPage} currentPage={page} />
 
         {/* Main Content on the right */}
         <main className="content-area">{renderPage()}</main>

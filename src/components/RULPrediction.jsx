@@ -142,7 +142,7 @@ export default function RULPrediction() {
       <h2>Remaining Useful Life (RUL) Prediction</h2>
 
       {/* File Upload */}
-      <div className="card">
+      <div className="card my-2">
         <input type="file" accept=".csv" onChange={handleFileUpload} />
       </div>
 
@@ -176,14 +176,12 @@ export default function RULPrediction() {
       {/* Prediction Button */}
       <button
         onClick={predictRUL}
+        className="mt-2 px-3 py-2 bg-green-500 text-white rounded"
         style={{
           padding: "10px 20px",
           backgroundColor: "#28a745",
           color: "white",
-          border: "none",
-          cursor: "pointer",
-          marginTop: "10px",
-          marginBottom: "10px",
+          border: "none"
         }}
       >
         Predict RUL
@@ -191,7 +189,7 @@ export default function RULPrediction() {
 
       {/* RUL Prediction Chart */}
       {rulPredictions.length > 0 && (
-        <div className="card">
+        <div className="card my-2">
           <h3>Predicted RUL Over Time</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={rulPredictions}>

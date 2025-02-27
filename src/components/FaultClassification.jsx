@@ -55,7 +55,7 @@ export default function FaultClassification() {
       {/* Charts Container */}
       <div className="charts-container">
         {/* Fault Distribution Pie Chart */}
-        <div className="card mt-2 mb-2" style={{ flex: 1 }}>
+        <div className="card my-2" style={{ flex: 1 }}>
           <h3>Fault Distribution</h3>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -82,7 +82,7 @@ export default function FaultClassification() {
         </div>
 
         {/* Fault Trends Over Time */}
-        <div className="card mt-2 mb-2" style={{ flex: 1 }}>
+        <div className="card my-2" style={{ flex: 1 }}>
           <h3>Fault Trend Over Time</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={faultData.faultTrend}>
@@ -99,7 +99,7 @@ export default function FaultClassification() {
       </div>
 
       {/* Engine-Specific Faults */}
-      <div className="card mt-2 mb-2" style={{ marginTop: "20px" }}>
+      <div className="card my-2">
         <h3>Faults per Engine</h3>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={faultData.engineFaults}>
@@ -113,11 +113,11 @@ export default function FaultClassification() {
       </div>
 
       {/* Fault Logs */}
-      <div className="card mt-2 mb-2" style={{ marginTop: "20px", overflowX: "auto" }}>
+      <div className="card my-2">
         <h3>Fault Logs</h3>
-        <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+        <table className="table table-bordered mt-4">
           <thead>
-            <tr style={{ backgroundColor: "#ddd" }}>
+            <tr>
               <th>ID</th>
               <th>Engine</th>
               <th>Fault Type</th>

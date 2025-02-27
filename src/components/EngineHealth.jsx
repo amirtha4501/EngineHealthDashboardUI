@@ -26,8 +26,8 @@ export default function EngineHealth() {
       <h2>Engine Health Monitoring</h2>
 
       {/* Engine Selector */}
-      <label style={{ fontSize: "16px", marginRight: "10px" }}>Select Engine:</label>
-      <select onChange={(e) => setSelectedEngine(e.target.value)} style={{ padding: "5px" }}>
+      <label style={{ marginRight: "10px" }}>Select Engine:</label>
+      <select onChange={(e) => setSelectedEngine(e.target.value)} className="px-2 py-1 rounded">
         <option value="Engine 1">Engine 1</option>
         <option value="Engine 2">Engine 2</option>
         <option value="Engine 3">Engine 3</option>
